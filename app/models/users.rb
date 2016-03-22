@@ -15,7 +15,7 @@ class Users
   def initialize
     @all_users = [
       {"first_name" => "Justin", "last_name" => "Herrick", "age" => 12, "id" => 1},
-      {"first_name" => "Rohit",  "last_name" => "Prabu",   "age" => 18,  "id" => 2},
+      {"first_name" => "Rohit",  "last_name" => "Prabu",   "age" => 18, "id" => 2},
       {"first_name" => "Lily",   "last_name" => "Smith",   "age" => 24, "id" => 3},
       {"first_name" => "Cameron","last_name" => "Black",   "age" => 28, "id" => 4},
       {"first_name" => "Andrea" ,"last_name" => "Logan",   "age" => 34, "id" => 5},
