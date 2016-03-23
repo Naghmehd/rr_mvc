@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   def show
-    render Users.new.all.to_json
+    if params[:first_name].nil?
+      render Users.new.all.to_json
+    else
+      first_name
+    end
   end
 
   def index
@@ -15,18 +19,18 @@ class UsersController < ApplicationController
 
   def first_name
     all_users = Users.new.all
-    first = params[:first_name].to_s.upcase
-      if first == "S"
-      render all_users[first].to_json
-      end
+    requested = all_users.select do |user|
+      user["first_name"][0] == params[:first_name]
+    end
+    render requested.to_json
+
   end
 
   def delete
     all_users = Users.new.all
     id = params[:id].to_i - 1
-      if all_users.delete_at[id]
-      render all_users.to_json
-      end
+    render all_users.delete_at[id].to_json
+
   end
 
 end
